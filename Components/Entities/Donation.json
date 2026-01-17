@@ -1,0 +1,88 @@
+export default {
+  "name": "Donation",
+  "type": "object",
+  "properties": {
+    "amount": {
+      "type": "number",
+      "description": "Donation amount in dollars",
+      "minimum": 1
+    },
+    "fund": {
+      "type": "string",
+      "enum": [
+        "general",
+        "building",
+        "missions",
+        "youth",
+        "worship"
+      ],
+      "description": "The fund to which the donation is allocated"
+    },
+    "donation_type": {
+      "type": "string",
+      "enum": [
+        "one_time",
+        "monthly",
+        "quarterly",
+        "annual"
+      ],
+      "default": "one_time",
+      "description": "Type of donation frequency"
+    },
+    "payment_method": {
+      "type": "string",
+      "enum": [
+        "card",
+        "bank_transfer",
+        "check"
+      ],
+      "default": "card",
+      "description": "Payment method used"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "completed",
+        "pending",
+        "failed"
+      ],
+      "default": "completed",
+      "description": "Payment status"
+    },
+    "donor_name": {
+      "type": "string",
+      "description": "Name of the donor"
+    },
+    "donor_email": {
+      "type": "string",
+      "format": "email",
+      "description": "Email of the donor"
+    },
+    "transaction_id": {
+      "type": "string",
+      "description": "Unique transaction identifier"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes from donor"
+    },
+    "is_anonymous": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the donation should be anonymous"
+    },
+    "next_charge_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Next charge date for recurring donations"
+    }
+  },
+  "required": [
+    "amount",
+    "fund",
+    "donor_name",
+    "donor_email",
+    "donation_type",
+    "payment_method"
+  ]
+};

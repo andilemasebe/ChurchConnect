@@ -1,0 +1,51 @@
+export default{
+  "name": "MinistryMember",
+  "type": "object",
+  "properties": {
+    "ministry_id": {
+      "type": "string",
+      "description": "Ministry ID"
+    },
+    "ministry_name": {
+      "type": "string",
+      "description": "Ministry name for reference"
+    },
+    "member_id": {
+      "type": "string",
+      "description": "Church member ID"
+    },
+    "member_name": {
+      "type": "string",
+      "description": "Member name"
+    },
+    "member_email": {
+      "type": "string",
+      "description": "Member email"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "leader",
+        "assistant_leader",
+        "member"
+      ],
+      "default": "member",
+      "description": "Role in ministry"
+    },
+    "joined_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date joined ministry"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Active status in ministry"
+    }
+  },
+  "required": [
+    "ministry_id",
+    "member_id",
+    "member_name"
+  ]
+};

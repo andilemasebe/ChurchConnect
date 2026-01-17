@@ -1,0 +1,57 @@
+export default {
+  "name": "EventRSVP",
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "description": "Event ID"
+    },
+    "event_title": {
+      "type": "string",
+      "description": "Event title for reference"
+    },
+    "attendee_name": {
+      "type": "string",
+      "description": "Name of attendee"
+    },
+    "attendee_email": {
+      "type": "string",
+      "description": "Email of attendee"
+    },
+    "attendee_id": {
+      "type": "string",
+      "description": "Member or Visitor ID"
+    },
+    "attendee_type": {
+      "type": "string",
+      "enum": [
+        "member",
+        "visitor"
+      ],
+      "description": "Type of attendee"
+    },
+    "guests_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of additional guests"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes or requests"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "confirmed",
+        "cancelled"
+      ],
+      "default": "confirmed",
+      "description": "RSVP status"
+    }
+  },
+  "required": [
+    "event_id",
+    "attendee_name",
+    "attendee_email"
+  ]
+};

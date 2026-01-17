@@ -1,0 +1,68 @@
+{
+  "name": "Announcement",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Announcement title"
+    },
+    "content": {
+      "type": "string",
+      "description": "Announcement content"
+    },
+    "announcement_type": {
+      "type": "string",
+      "enum": [
+        "general",
+        "urgent",
+        "event",
+        "prayer_request",
+        "celebration"
+      ],
+      "default": "general",
+      "description": "Type of announcement"
+    },
+    "published_by": {
+      "type": "string",
+      "description": "Name of the person who published"
+    },
+    "published_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Publication date"
+    },
+    "target_audience": {
+      "type": "string",
+      "enum": [
+        "all",
+        "members",
+        "visitors",
+        "youth",
+        "children",
+        "seniors"
+      ],
+      "default": "all",
+      "description": "Who should see this announcement"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether announcement is currently active"
+    },
+    "expires_date": {
+      "type": "string",
+      "format": "date",
+      "description": "When the announcement expires"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Optional image for the announcement"
+    }
+  },
+  "required": [
+    "title",
+    "content",
+    "published_by",
+    "published_date"
+  ]
+}

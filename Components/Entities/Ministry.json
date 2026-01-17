@@ -1,0 +1,59 @@
+export default{
+  "name": "Ministry",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Ministry name"
+    },
+    "ministry_key": {
+      "type": "string",
+      "enum": [
+        "choir",
+        "ushering",
+        "prayer_team",
+        "youth_ministry",
+        "children_ministry",
+        "media_team",
+        "welfare",
+        "evangelism",
+        "other"
+      ],
+      "description": "Unique ministry key for messaging"
+    },
+    "description": {
+      "type": "string",
+      "description": "Ministry description"
+    },
+    "leader_name": {
+      "type": "string",
+      "description": "Ministry leader name"
+    },
+    "leader_email": {
+      "type": "string",
+      "description": "Ministry leader email"
+    },
+    "leader_id": {
+      "type": "string",
+      "description": "Leader's member ID"
+    },
+    "meeting_schedule": {
+      "type": "string",
+      "description": "Regular meeting schedule"
+    },
+    "member_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of members"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether ministry is active"
+    }
+  },
+  "required": [
+    "name",
+    "ministry_key"
+  ]
+};

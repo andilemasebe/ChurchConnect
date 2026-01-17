@@ -1,0 +1,55 @@
+{
+  "name": "Attendance",
+  "type": "object",
+  "properties": {
+    "person_id": {
+      "type": "string",
+      "description": "Member ID or Visitor ID"
+    },
+    "person_type": {
+      "type": "string",
+      "enum": [
+        "member",
+        "visitor"
+      ],
+      "description": "Type of attendee"
+    },
+    "person_name": {
+      "type": "string",
+      "description": "Full name of the person"
+    },
+    "service_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of the service"
+    },
+    "service_type": {
+      "type": "string",
+      "enum": [
+        "sunday_service",
+        "wednesday_service",
+        "friday_service",
+        "special_event",
+        "prayer_meeting",
+        "bible_study",
+        "youth_service",
+        "other"
+      ],
+      "description": "Type of service"
+    },
+    "check_in_time": {
+      "type": "string",
+      "description": "Time of check-in"
+    },
+    "checked_in_by": {
+      "type": "string",
+      "description": "Who performed the check-in"
+    }
+  },
+  "required": [
+    "person_id",
+    "person_type",
+    "service_date",
+    "service_type"
+  ]
+}

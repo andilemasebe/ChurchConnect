@@ -1,0 +1,82 @@
+{
+  "name": "Visitor",
+  "type": "object",
+  "properties": {
+    "first_name": {
+      "type": "string",
+      "description": "Visitor's first name"
+    },
+    "last_name": {
+      "type": "string",
+      "description": "Visitor's last name"
+    },
+    "visitor_id": {
+      "type": "string",
+      "description": "Unique visitor ID for check-in"
+    },
+    "email": {
+      "type": "string",
+      "description": "Email address"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Phone number"
+    },
+    "address": {
+      "type": "string",
+      "description": "Home address"
+    },
+    "first_visit_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of first visit"
+    },
+    "how_heard": {
+      "type": "string",
+      "enum": [
+        "friend",
+        "family",
+        "social_media",
+        "website",
+        "drive_by",
+        "event",
+        "other"
+      ],
+      "description": "How they heard about the church"
+    },
+    "prayer_request": {
+      "type": "string",
+      "description": "Any prayer requests"
+    },
+    "interested_in_membership": {
+      "type": "boolean",
+      "default": false,
+      "description": "Interested in becoming a member"
+    },
+    "follow_up_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "contacted",
+        "completed",
+        "converted_to_member"
+      ],
+      "default": "pending",
+      "description": "Follow-up status"
+    },
+    "visit_count": {
+      "type": "number",
+      "default": 1,
+      "description": "Number of times visited"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes"
+    }
+  },
+  "required": [
+    "first_name",
+    "last_name",
+    "visitor_id"
+  ]
+}

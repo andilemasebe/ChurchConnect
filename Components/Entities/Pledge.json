@@ -1,0 +1,85 @@
+export default{
+  "name": "Pledge",
+  "type": "object",
+  "properties": {
+    "pledger_name": {
+      "type": "string",
+      "description": "Name of the person making the pledge"
+    },
+    "pledger_email": {
+      "type": "string",
+      "format": "email",
+      "description": "Email address of the pledger"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Pledge amount per period",
+      "minimum": 1
+    },
+    "frequency": {
+      "type": "string",
+      "enum": [
+        "monthly",
+        "quarterly",
+        "annual",
+        "one_time"
+      ],
+      "default": "monthly",
+      "description": "How often the pledge will be fulfilled"
+    },
+    "fund": {
+      "type": "string",
+      "enum": [
+        "general",
+        "building",
+        "missions",
+        "youth",
+        "worship"
+      ],
+      "description": "The fund to which the pledge is directed"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "When the pledge begins"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "When the pledge ends"
+    },
+    "total_pledged": {
+      "type": "number",
+      "description": "Total amount pledged over the entire period"
+    },
+    "amount_fulfilled": {
+      "type": "number",
+      "default": 0,
+      "description": "Amount that has been donated so far"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "completed",
+        "cancelled"
+      ],
+      "default": "active",
+      "description": "Current status of the pledge"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes about the pledge"
+    }
+  },
+  "required": [
+    "pledger_name",
+    "pledger_email",
+    "amount",
+    "frequency",
+    "fund",
+    "start_date",
+    "end_date",
+    "total_pledged"
+  ]
+};

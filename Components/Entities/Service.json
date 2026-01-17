@@ -1,0 +1,57 @@
+{
+  "name": "Service",
+  "type": "object",
+  "properties": {
+    "service_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of the service"
+    },
+    "service_type": {
+      "type": "string",
+      "enum": [
+        "sunday_service",
+        "wednesday_service",
+        "friday_service",
+        "special_event",
+        "prayer_meeting",
+        "bible_study",
+        "youth_service",
+        "other"
+      ],
+      "description": "Type of service"
+    },
+    "title": {
+      "type": "string",
+      "description": "Service title or theme"
+    },
+    "total_attendance": {
+      "type": "number",
+      "default": 0,
+      "description": "Total attendance count"
+    },
+    "member_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of members present"
+    },
+    "visitor_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of visitors present"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Service notes"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether check-in is currently active"
+    }
+  },
+  "required": [
+    "service_date",
+    "service_type"
+  ]
+}

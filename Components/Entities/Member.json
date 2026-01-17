@@ -1,0 +1,110 @@
+{
+  "name": "Member",
+  "type": "object",
+  "properties": {
+    "first_name": {
+      "type": "string",
+      "description": "Member's first name"
+    },
+    "last_name": {
+      "type": "string",
+      "description": "Member's last name"
+    },
+    "member_id": {
+      "type": "string",
+      "description": "Unique member ID for check-in"
+    },
+    "email": {
+      "type": "string",
+      "description": "Email address"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Phone number"
+    },
+    "date_of_birth": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of birth"
+    },
+    "gender": {
+      "type": "string",
+      "enum": [
+        "male",
+        "female"
+      ],
+      "description": "Gender"
+    },
+    "address": {
+      "type": "string",
+      "description": "Home address"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "adult",
+        "youth",
+        "teenager",
+        "child",
+        "senior"
+      ],
+      "description": "Age category"
+    },
+    "salvation_status": {
+      "type": "string",
+      "enum": [
+        "saved",
+        "not_saved",
+        "rededicated"
+      ],
+      "description": "Salvation status"
+    },
+    "baptism_status": {
+      "type": "string",
+      "enum": [
+        "baptized",
+        "not_baptized",
+        "scheduled"
+      ],
+      "description": "Baptism status"
+    },
+    "baptism_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of baptism if baptized"
+    },
+    "salvation_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of salvation"
+    },
+    "join_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date joined the church"
+    },
+    "ministry": {
+      "type": "string",
+      "description": "Ministry or department involvement"
+    },
+    "photo_url": {
+      "type": "string",
+      "description": "Profile photo URL"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Active membership status"
+    }
+  },
+  "required": [
+    "first_name",
+    "last_name",
+    "member_id",
+    "category"
+  ]
+}

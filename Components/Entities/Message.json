@@ -1,0 +1,97 @@
+{
+  "name": "Message",
+  "type": "object",
+  "properties": {
+    "sender_name": {
+      "type": "string",
+      "description": "Name of the message sender"
+    },
+    "sender_email": {
+      "type": "string",
+      "description": "Email of the sender"
+    },
+    "sender_id": {
+      "type": "string",
+      "description": "Member ID or Visitor ID"
+    },
+    "sender_type": {
+      "type": "string",
+      "enum": [
+        "member",
+        "visitor",
+        "admin"
+      ],
+      "description": "Type of sender"
+    },
+    "recipient_type": {
+      "type": "string",
+      "enum": [
+        "admin",
+        "ministry"
+      ],
+      "description": "Who the message is for"
+    },
+    "ministry_name": {
+      "type": "string",
+      "enum": [
+        "choir",
+        "ushering",
+        "prayer_team",
+        "youth_ministry",
+        "children_ministry",
+        "media_team",
+        "welfare",
+        "evangelism",
+        "other"
+      ],
+      "description": "Specific ministry if recipient_type is ministry"
+    },
+    "subject": {
+      "type": "string",
+      "description": "Message subject"
+    },
+    "content": {
+      "type": "string",
+      "description": "Message content"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "read",
+        "replied"
+      ],
+      "default": "new",
+      "description": "Message status"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "normal",
+        "high",
+        "urgent"
+      ],
+      "default": "normal",
+      "description": "Message priority"
+    },
+    "reply_content": {
+      "type": "string",
+      "description": "Admin reply to the message"
+    },
+    "replied_by": {
+      "type": "string",
+      "description": "Who replied to the message"
+    },
+    "replied_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the reply was sent"
+    }
+  },
+  "required": [
+    "sender_name",
+    "subject",
+    "content",
+    "recipient_type"
+  ]
+}
